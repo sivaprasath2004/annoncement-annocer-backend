@@ -9,10 +9,9 @@ const {
   Accountfind,
   DeleteAccount,
 } = require("./controller/login");
-require('dotenv').config();
 const mailing = require("./controller/mail");
 const { message, Mails } = require("./controller/message");
-const { All, Result } = require("./controller/search");
+const { All, Result,key } = require("./controller/search");
 const port = 5001;
 const cors = require("cors");
 app.use(express.json());
@@ -23,10 +22,7 @@ app.get("/searchingResult", Result);
 app.post("/createUser", main);
 app.post("/message", message);
 app.post("/Account", Account);
-app.post("/Access",(req,res)=>
-  if(req.body.user===process.env.USERKEY){
-   res.send(process.env.API_KEY)
-})
+app.post("/Access",key)
 app.post("/DeleteAccount", DeleteAccount);
 app.post("/Password", Password);
 app.post("/Accountfind", Accountfind);
