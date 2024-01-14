@@ -9,6 +9,7 @@ const {
   Accountfind,
   DeleteAccount,
 } = require("./controller/login");
+require('dotenv').config();
 const mailing = require("./controller/mail");
 const { message, Mails } = require("./controller/message");
 const { All, Result } = require("./controller/search");
@@ -22,6 +23,10 @@ app.get("/searchingResult", Result);
 app.post("/createUser", main);
 app.post("/message", message);
 app.post("/Account", Account);
+app.post("/Access",(req,res)=>
+  if(req.body.user===process.env.USERKEY){
+   res.send(process.env.API_KEY)
+})
 app.post("/DeleteAccount", DeleteAccount);
 app.post("/Password", Password);
 app.post("/Accountfind", Accountfind);
