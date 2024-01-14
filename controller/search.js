@@ -15,6 +15,11 @@ const All=async(req,res)=>{
      await mongoose.disconnect()
     }
 }
+const key=(req,res)=>{
+  if(req.body.user===process.env.USERKEY){
+   res.send(process.env.API_KEY)
+}
+}
 const Result =async(req,res)=>{
   let Category=req.query.category
     let value=req.query.value
@@ -34,4 +39,4 @@ let search = await users.find(query).select(Category);
      await mongoose.disconnect()
     }
 }
-module.exports={All,Result}
+module.exports={All,Result,key}
