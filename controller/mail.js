@@ -22,6 +22,7 @@ const receiver={
     attachments:{
       filename:req.body.Attachment,
       content: 'Attachment',
+      path:req.body.Attachment,
     },
 }
 const sendMail=async(sender,receiver)=>{
