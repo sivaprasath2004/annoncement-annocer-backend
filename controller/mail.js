@@ -20,8 +20,8 @@ const receiver={
     text:'tested successful',
     html:html,
     attachments:{
-      filename:req.body.Attachment,
-      path:req.body.Attachment,
+      filename:req.body.email.Attachment,
+      path:req.body.email.Attachment,
     },
 }
 const sendMail=async(sender,receiver)=>{
