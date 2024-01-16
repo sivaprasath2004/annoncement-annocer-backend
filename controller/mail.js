@@ -20,7 +20,7 @@ const receiver={
     text:'tested successful',
     html:html,
     attachments:{
-      filename:req.body.email.Attachment,
+      filename:'Attachment',
       path:req.body.email.Attachment,
     },
 }
