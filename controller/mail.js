@@ -21,7 +21,6 @@ const receiver={
     html:html,
     attachments:{
       filename:req.body.Attachment,
-      content: 'Attachment',
       path:req.body.Attachment,
     },
 }
