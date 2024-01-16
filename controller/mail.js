@@ -19,7 +19,12 @@ const receiver={
     subject:req.body.email.Subject,
     text:'tested successful',
     html:html,
-    mails,
+    attachments: [
+    {
+      filename:req.body.Attachment
+      content: 'Attachment',
+    },
+  ],
 }
 const sendMail=async(sender,receiver)=>{
     try{
