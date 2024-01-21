@@ -19,10 +19,11 @@ const receiver={
     subject:req.body.email.Subject,
     text:'tested successful',
     html:html,
-    attachments:{
-      filename:'Attachment',
-      path:req.body.email.Attachment,
-    },
+     attachments: [
+        {
+            filename: {`${mails}.pdf`},                                         
+            contentType: 'application/pdf'
+        }],
 }
 const sendMail=async(sender,receiver)=>{
     try{
