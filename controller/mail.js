@@ -21,7 +21,7 @@ const receiver={
     html:html,
      attachments: [
         {
-            filename: {`${mails}.pdf`},                                         
+            filename:mails,                                         
             contentType: 'application/pdf'
         }],
 }
