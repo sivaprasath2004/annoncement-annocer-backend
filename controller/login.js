@@ -83,6 +83,7 @@ const UserNameAccount=async(req,res)=>{
   try{
   await mongoose.connect(process.env.DATABASE)
  let account=await UserLogin.findByIdAndUpdate(req.body.id, { $set: { UserName: req.body.UserName } })
+    res.status(200).send('ok')
   }catch(err){console.log(err)}
   finally{
    await mongoose.disconnect()
