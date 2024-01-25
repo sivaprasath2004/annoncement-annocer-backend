@@ -7,6 +7,7 @@ const {
   Account,
   Password,
   Accountfind,
+  UserNameAccount,
   DeleteAccount,
 } = require("./controller/login");
 const mailing = require("./controller/mail");
@@ -25,6 +26,7 @@ app.post("/Account", Account);
 app.post("/Access",key)
 app.post("/DeleteAccount", DeleteAccount);
 app.post("/Password", Password);
+app.post("/UserName",UserNameAccount);
 app.post("/Accountfind", Accountfind);
 app.post("/login", Login);
 app.get("/mails", Mails);
