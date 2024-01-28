@@ -23,8 +23,7 @@ const receiver={
 const sendMail=async(sender,receiver)=>{
     try{
         await sender.sendMail(receiver)
-        console.log('send successful')
-        res.send("send successful")
+        res.status(200).send("send successful")
     }catch(err){
         console.log(err)
     }
