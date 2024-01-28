@@ -9,6 +9,7 @@ const {
   Accountfind,
   UserNameAccount,
   DeleteAccount,
+  userChecking,
 } = require("./controller/login");
 const mailing = require("./controller/mail");
 const { message, Mails } = require("./controller/message");
@@ -21,6 +22,7 @@ app.use(cors());
 app.get("/", (req, res) => res.send("How can I Help You"));
 app.get("/searchingResult", Result);
 app.post("/createUser", main);
+app.post("/userChecking",userChecking);
 app.post("/message", message);
 app.post("/Account", Account);
 app.post("/Access",key)
