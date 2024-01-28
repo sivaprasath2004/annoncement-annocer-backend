@@ -1,7 +1,6 @@
 const nodeMailer=require('nodemailer')
 require('dotenv').config();
 const mailing=(req,res)=>{
-  console.log(req.body.email)
 let mails=req.body.email.Attachment
 const sender=nodeMailer.createTransport({
     service:process.env.SERIVE,
@@ -19,12 +18,7 @@ const receiver={
     subject:req.body.email.Subject,
     text:'tested successful',
     html:html,
-     attachments: [
-        {
-            filename:req.body.email.FileName,  
-            path:mails,
-            contentType:req.body.email.FileType
-        }],
+     attachments: mails,
 }
 const sendMail=async(sender,receiver)=>{
     try{
