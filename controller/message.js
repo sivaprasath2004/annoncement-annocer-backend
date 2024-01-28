@@ -4,15 +4,7 @@ const users=require('../mongodb/messageSchema.js')
 const message = async(req,res) => {
   try{
   await mongoose.connect(process.env.DATABASE)
-  await users.create({Image: 'props.Image',
-      ImageHeight: 'props.ImageHeight',
-      ImageWidth:' props.ImageWidth',
-      Link:' props.Link',
-      Subject: 'props.Subject',
-      Time:' props.Time',
-      Title:' props.Title'
-                     })
-  await users.create(req.body.email)
+  await users.insertMany(req.body.email)
   res.status(200).send('ok')
   }
   catch(err){console.log(err.message)}
