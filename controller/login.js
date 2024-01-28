@@ -93,6 +93,7 @@ const DeleteAccount=async(req,res)=>{
   try{
   await mongoose.connect(process.env.DATABASE)
  let account=await UserLogin.findByIdAndDelete(req.body._id)
+    res.status(200).send('ok')
   }catch(err){console.log(err)}
   finally{
    await mongoose.disconnect()
