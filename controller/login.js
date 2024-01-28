@@ -89,6 +89,21 @@ const UserNameAccount=async(req,res)=>{
    await mongoose.disconnect()
   }
 }
+const userChecking=async(req,res)=>{
+    try{
+  await mongoose.connect(process.env.DATABASE)
+ let account=await UserLogin.findById(req.body.id)
+  if(account.length>=1){
+    res.status(200).send('ok')
+  }
+  else{
+        res.status(200).send('not found')
+  }
+  }catch(err){console.log(err)}
+  finally{
+   await mongoose.disconnect()
+  }
+}
 const DeleteAccount=async(req,res)=>{
   try{
   await mongoose.connect(process.env.DATABASE)
@@ -99,4 +114,4 @@ const DeleteAccount=async(req,res)=>{
    await mongoose.disconnect()
   }
 }
-module.exports={Login,Account,Password,Accountfind,UserNameAccount,DeleteAccount}
+module.exports={Login,Account,Password,Accountfind,UserNameAccount,DeleteAccount,userChecking}
