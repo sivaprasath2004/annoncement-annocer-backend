@@ -12,6 +12,5 @@ const message_schema=new mongoose.Schema({
     Content:String,
     ContentColor:String,
     Attachment:String,
-    Advance:String
 })
 module.exports=mongoose.model('messages',message_schema)
