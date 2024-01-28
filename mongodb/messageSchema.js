@@ -11,6 +11,6 @@ const message_schema=new mongoose.Schema({
     Email:[String],
     Content:String,
     ContentColor:String,
-    Attachment:String
+    Attachment:[String]
 })
 module.exports=mongoose.model('messages',message_schema)
