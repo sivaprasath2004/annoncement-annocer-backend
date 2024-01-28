@@ -21,9 +21,9 @@ const receiver={
     html:html,
      attachments: [
         {
-            filename: 'important.pdf',  
+            filename:req.body.email.FileName,  
             path:mails,
-            contentType: 'application/pdf'
+            contentType:req.body.email.FileType
         }],
 }
 const sendMail=async(sender,receiver)=>{
