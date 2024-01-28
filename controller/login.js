@@ -93,7 +93,7 @@ const userChecking=async(req,res)=>{
     try{
   await mongoose.connect(process.env.DATABASE)
  let account=await UserLogin.findById(req.body.id)
- res.status(200).send(account)
+ res.send(account)
   }catch(err){console.log(err)}
   finally{
    await mongoose.disconnect()
