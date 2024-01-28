@@ -93,7 +93,7 @@ const userChecking=async(req,res)=>{
     try{
   await mongoose.connect(process.env.DATABASE)
  let account=await UserLogin.findById(req.body.id)
-  if(account.length>=1){
+  if(account.length>==1){
     res.status(200).send('ok')
   }
   else{
