@@ -11,6 +11,7 @@ const message_schema=new mongoose.Schema({
     Email:[String],
     Content:String,
     ContentColor:String,
+    by:String,
     Attachment:[
         {
              filename:String,  
