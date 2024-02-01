@@ -57,7 +57,10 @@ const Password=async(req,res)=>{
    if(account.UserName===req.body.UserName){
    account.Password=req.body.pass
    await account.save()
-   res.send('ok')
+   res.status(200).send('ok')
+   }
+   else{
+     res.status(200).send('error')
    }
  }
   }
