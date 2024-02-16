@@ -6,7 +6,7 @@ const All=async(req,res)=>{
     await mongoose.connect(process.env.DATABASE)
     let Category=req.query.category
     let value=req.query.value
-    let user=await users.where(Category).equals(value).select('Email name Reg_no Department')
+    let user=await users.find({})
     res.send(user)
   }catch(error){
     console.log(error.message)
