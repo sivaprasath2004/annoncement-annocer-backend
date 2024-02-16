@@ -39,4 +39,18 @@ let search = await users.find(query).select(Category);
      await mongoose.disconnect()
     }
 }
-module.exports={All,Result,key}
+const deleteUser_id=async(req,res)=>{
+  let id=req.body.id
+  try{
+    await mongoose.connect(process.env.DATABASE)
+    await users.findByIdAndDelete(id)
+    res.status(200).send('ok')
+  }
+  catch(err){
+     console.log(err)
+  }
+  finally{
+     await mongoose.disconnect()
+    }
+}
+module.exports={All,Result,key,deleteUser_id}
