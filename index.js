@@ -34,5 +34,5 @@ app.post("/login", Login);
 app.post("/UserAcoountRemove",deleteUser_id);
 app.get("/mails", Mails);
 app.post("/mail", mailing);
-app.get("/All", All);
+app.post("/All", All);
 app.listen(port, () => console.log("port is running in", port));
