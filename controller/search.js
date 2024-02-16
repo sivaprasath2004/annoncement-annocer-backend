@@ -4,8 +4,6 @@ const mongoose=require('mongoose')
 const All=async(req,res)=>{
   try{
     await mongoose.connect(process.env.DATABASE)
-    let Category=req.query.category
-    let value=req.query.value
     let user=await users.find({})
     res.send(user)
   }catch(error){
