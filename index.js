@@ -13,7 +13,7 @@ const {
 } = require("./controller/login");
 const mailing = require("./controller/mail");
 const { message, Mails } = require("./controller/message");
-const { All, Result,key } = require("./controller/search");
+const { All, Result,key,deleteUser_id } = require("./controller/search");
 const port = 5001;
 const cors = require("cors");
 app.use(express.json());
@@ -31,6 +31,7 @@ app.post("/Password", Password);
 app.post("/UserName",UserNameAccount);
 app.post("/Accountfind", Accountfind);
 app.post("/login", Login);
+app.post("/UserAcoountRemove",deleteUser_id);
 app.get("/mails", Mails);
 app.post("/mail", mailing);
 app.get("/All", All);
