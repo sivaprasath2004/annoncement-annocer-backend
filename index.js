@@ -13,7 +13,7 @@ const {
 } = require("./controller/login");
 const mailing = require("./controller/mail");
 const { message, Mails } = require("./controller/message");
-const { All, Result,key,deleteUser_id } = require("./controller/search");
+const { All, Result,key,deleteUser_id,findUserMail } = require("./controller/search");
 const port = 5001;
 const cors = require("cors");
 app.use(express.json());
@@ -35,4 +35,5 @@ app.post("/UserAcoountRemove",deleteUser_id);
 app.get("/mails", Mails);
 app.post("/mail", mailing);
 app.post("/All", All);
+app.post("/usermail,findUserMail);
 app.listen(port, () => console.log("port is running in", port));
