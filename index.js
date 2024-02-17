@@ -35,5 +35,5 @@ app.post("/UserAcoountRemove",deleteUser_id);
 app.get("/mails", Mails);
 app.post("/mail", mailing);
 app.post("/All", All);
-app.post("/usermail,findUserMail);
+app.post("/usermail",findUserMail);
 app.listen(port, () => console.log("port is running in", port));
