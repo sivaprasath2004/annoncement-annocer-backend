@@ -13,6 +13,19 @@ const All=async(req,res)=>{
      await mongoose.disconnect()
     }
 }
+const findUserMail=async(req,res)=>{
+  try{
+    await mongoose.connect(process.env.DATABASE)
+    let search=`{${req.body.category}:${req.body.value}}`
+    let user=await users.find(search)
+    res.send(user)
+  }catch(error){
+    console.log(error.message)
+  }
+  finally{
+     await mongoose.disconnect()
+    }
+}
 const key=(req,res)=>{
   if(req.body.user===process.env.USERKEY){
    res.send(process.env.API_KEY)
@@ -51,4 +64,4 @@ const deleteUser_id=async(req,res)=>{
      await mongoose.disconnect()
     }
 }
-module.exports={All,Result,key,deleteUser_id}
+module.exports={All,Result,key,deleteUser_id,findUserMail}
