@@ -16,8 +16,7 @@ const All=async(req,res)=>{
 const findUserMail=async(req,res)=>{
   try{
     await mongoose.connect(process.env.DATABASE)
-    let search=`{${req.body.category}:${req.body.value}}`
-    let user=await users.find(search)
+    let user=await users.where(req.body.category).equals(req.body.value) || "null"
     res.send(user)
   }catch(error){
     console.log(error.message)
