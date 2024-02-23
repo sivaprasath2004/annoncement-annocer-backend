@@ -9,7 +9,7 @@ const {
   Accountfind,
   UserNameAccount,
   DeleteAccount,
-  userChecking,
+  userChecking
 } = require("./controller/login");
 const mailing = require("./controller/mail");
 const { message, Mails } = require("./controller/message");
