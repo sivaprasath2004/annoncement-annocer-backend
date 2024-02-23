@@ -38,13 +38,4 @@ app.post("/All", All);
 app.post("/usermail",findUserMail);
 app.listen(port, () => console.log("port is running in", port));
 
-/*
-API_KEY='AIzaSyC_RJGAYyK58cFI_bORTyAQllOtguS1N6U'
-USERKEY='1:239548089147:web:e6981316b02f0ba1066d1e'
-DATABASE='mongodb+srv://DarkChoco:zF5TOk2ddLv7yPLy@cluster0.yvhzzep.mongodb.net/?retryWrites=true&w=majority'
-PASS='befk tetk mevf thuw'
-HOST='smtp.gmail.com'
-SERVICE='gmail'
-USER='sivashiva27012004@gmail.com'
-PORT=587
-*/
+
